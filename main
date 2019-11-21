@@ -1,0 +1,3 @@
+source modules/apt_upgrade.sh
+source modules/dotfiles.sh
+source modules/install_uninstall_apt.sh

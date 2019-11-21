@@ -1,0 +1,7 @@
+rm main
+for file in modules/*sh; do
+	echo "source $file" >> main && echo "Loaded $file"
+done
+chmod +x main
+
+printf "\nRun ./main to start.\n"
