@@ -1,15 +1,20 @@
 install=(
-	git
-	redshift
   borgbackup
+  blueman
   curl
   dmenu
+  git
+  gnome-disk-utility
   keepassxc
+  p7zip-full
   pcmanfm
   python3-pip
+  redshift
+  rsync
   thunderbird
   tmux
   transmission
+  tree
   vlc
 )
 

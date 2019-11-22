@@ -1,3 +1,6 @@
 source modules/apt_upgrade.sh
 source modules/dotfiles.sh
+source modules/icecat.sh
 source modules/install_uninstall_apt.sh
+source modules/tor.sh
+source modules/wifi-fix.sh
