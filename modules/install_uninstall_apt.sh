@@ -12,6 +12,7 @@ install=(
   python3-pip
   redshift
   rsync
+  shellcheck
   slim
   suckless-tools
   thunderbird
