@@ -1,45 +1,53 @@
 install=(
-  blueman
   borgbackup
   curl
   dmenu
+  falkon
   git
   gnome-disk-utility
   keepassxc
-  network-manager-gnome
+  mpv
+  nvi
   p7zip-full
-  pcmanfm
   python3-pip
   redshift
   rsync
   shellcheck
   slim
   suckless-tools
-  thunderbird
   tmux
   transmission
   tree
-  vim-gtk
-  vlc
 )
 
 uninstall=(
   *libreoffice*
+  *network-manager*
   *xterm*
   atril
+  audacious
   exfalso
-  fonts-noto-core
+  feathernotes
   g++-8
+  firefox-esr
+  fonts-noto-core
   gimp-data
   hv3
   lightdm
+  meteo-qt
   openjdk-11-jre-headless
+  orca
+  papirus-icon-theme
   parole
+  quasel
+  sddm
+  smplayer
+  smtube
   synaptic
   system-config-printer
-  xarchiver
-  xfburn
-  xfce4-goodies
+  tango-icon-theme
+  thunderbird
+  vim*
   xsane
 )
 
