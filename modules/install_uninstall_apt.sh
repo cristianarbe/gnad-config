@@ -1,23 +1,22 @@
 install=(
   borgbackup
   curl
-  dmenu
   falkon
+  geary
   git
   gnome-disk-utility
   keepassxc
+  midori
   mpv
   nvi
   p7zip-full
-  python3-pip
+  qdirstat
   redshift
   rsync
   shellcheck
   slim
-  suckless-tools
   tmux
   transmission
-  tree
 )
 
 uninstall=(
@@ -26,12 +25,12 @@ uninstall=(
   *xterm*
   atril
   audacious
+  evince
   exfalso
   feathernotes
-  g++-8
   firefox-esr
   fonts-noto-core
-  gimp-data
+  gimp*
   hv3
   lightdm
   meteo-qt
