@@ -1,6 +1,9 @@
-source modules/apt_upgrade.sh
-source modules/dotfiles.sh
-source modules/icecat.sh
-source modules/install_uninstall_apt.sh
-source modules/tor.sh
-source modules/wifi-fix.sh
+#!/bin/env sh
+
+for module in apt_upgrade dotfiles install_uninstall_apt tor wifi-fix; do
+    # shellcheck disable=SC1090
+    if ! . modules/"$module".sh; then
+        echo "Could not load $module."
+        exit 1
+    fi
+done
