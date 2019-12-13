@@ -1,5 +1,7 @@
 #!/bin/env bash
 
+set -e
+
 install=(
   bc
   borgbackup
@@ -17,9 +19,12 @@ install=(
   mpv
   mullvad-vpn
   ncdu
+  network-manager-gnome
   nvi
+  p7zip
   papirus-icon-theme
   pulseaudio-module-bluetooth
+  python3-pip
   redshift
   sakura
   shellcheck
@@ -29,6 +34,7 @@ install=(
   tmux
   transmission-gtk
   wkhtmltopdf
+  xfce4-whiskermenu-plugin
   zathura-pdf-poppler
   zathura
 )
@@ -191,7 +197,11 @@ uninstall=(
 )
 
 sudo apt update
-sudo apt install ${install[@]}
+for package in "${install[@]}"; do
+  sudo apt install "$package" -y
+done
 sudo apt purge ${uninstall[@]}
-sudo apt install ${install[@]}
+for package in "${install[@]}"; do
+  sudo apt install "$package" -y
+done
 sudo apt autoremove -y
