@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/env sh
 DOT_FILES="https://github.com/cristianarbe/dotfiles.git"
 
 # shellcheck disable=SC2016

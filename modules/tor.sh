@@ -1,6 +1,6 @@
-#!/bin/env bash
+#!/bin/env sh
 cd /tmp || exit
-if [[ ! -f tor-browser-linux64-9.0.1_en-US.tar.xz ]]; then
+if [ ! -f tor-browser-linux64-9.0.1_en-US.tar.xz ]; then
   wget https://dist.torproject.org/torbrowser/9.0.1/tor-browser-linux64-9.0.1_en-US.tar.xz
 fi
 cd /opt || exit
