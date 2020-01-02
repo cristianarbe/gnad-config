@@ -1,9 +1,0 @@
-#!/bin/env sh
-
-for module in apt_upgrade dotfiles install_uninstall_apt tor wifi-fix; do
-    # shellcheck disable=SC1090
-    if ! . modules/"$module".sh; then
-        echo "Could not load $module."
-        exit 1
-    fi
-done

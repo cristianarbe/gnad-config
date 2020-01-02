@@ -1,0 +1,8 @@
+#!/bin/env sh
+
+./setup-bluetooth-audio
+./setup-dotfiles
+./setup-tor
+./setup-tty
+./setup-upgrade
+./setup-wifi
