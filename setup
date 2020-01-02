@@ -1,4 +1,4 @@
-#!/bin/env sh
+#!/bin/sh
 
 ./setup-bluetooth-audio
 ./setup-dotfiles
@@ -6,3 +6,5 @@
 ./setup-tty
 ./setup-upgrade
 ./setup-wifi
+./setup-vim-plug
+
