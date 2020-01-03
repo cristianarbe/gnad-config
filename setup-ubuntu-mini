@@ -1,6 +1,5 @@
 #!/bin/sh
-
-function add(){ sudo apt install --no-install-recommends "$@"; }
+test "$(id -u)" != "0" && echo 'Script must be ran as root' && exit 1
 
 sudo apt install xorg xinit
 
@@ -35,3 +34,10 @@ echo 'xfce4-panel &
 pcmanfm --desktop &
 redshift -l 50:1 &
 compton -b -c &' > ~/.config/openbox/autostart
+
+wget -O /usr/local/bin/pacapt \
+  https://github.com/icy/pacapt/raw/ng/pacapt
+
+chmod 755 /usr/local/bin/pacapt
+
+ln -sv /usr/local/bin/pacapt /usr/local/bin/pacman || true
