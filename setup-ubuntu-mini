@@ -2,7 +2,7 @@
 test "$(id -u)" != "0" && echo 'Script must be ran as root' && exit 1
 
 sudo apt --no-install-recommends install \
-  "xfce4-power-manager-*" \
+  "xfce4-power-*" \
   compton \
   dmenu \
   firefox \
@@ -25,9 +25,10 @@ sudo apt --no-install-recommends install \
   sakura \
   xfce4-notifyd \
   xfce4-panel \
-  xfce4-pulseaudio-plugin
+  xfce4-pulseaudio-plugin \
+  xserver-xorg-core
 
-sudo apt install xorg xinit
+sudo apt install xinit
 
 mkdir -p ~/.config/openbox/autostart
 echo 'xfce4-panel &
