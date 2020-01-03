@@ -1,8 +1,6 @@
 #!/bin/sh
 test "$(id -u)" != "0" && echo 'Script must be ran as root' && exit 1
 
-sudo apt install xorg xinit
-
 sudo apt --no-install-recommends install \
   "xfce4-power-manager-*" \
   compton \
@@ -28,6 +26,8 @@ sudo apt --no-install-recommends install \
   xfce4-notifyd \
   xfce4-panel \
   xfce4-pulseaudio-plugin
+
+sudo apt install xorg xinit
 
 mkdir -p ~/.config/openbox/autostart
 echo 'xfce4-panel &
