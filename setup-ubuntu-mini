@@ -28,7 +28,9 @@ sudo apt --no-install-recommends install \
   python3-distutils \
   redshift \
   sakura \
+  unzip \
   vim \
+  wmctrl \
   xfce4-notifyd \
   xfce4-panel \
   xfce4-pulseaudio-plugin
