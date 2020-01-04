@@ -1,12 +1,15 @@
 #!/bin/env sh
-DOT_FILES="https://github.com/cristianarbe/dotfiles.git"
+
+set -eux
+
+DOT_FILES="https://github.com/cristianrz/dotfiles.git"
 
 # shellcheck disable=SC2016
-echo 'alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ 
---work-tree=$HOME"' >>~/.bashrc
+dotfiles(){ /usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree="$HOME" "$@"; }
+echo 'alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"' >>~/.bashrc
 # shellcheck disable=SC1090
-. ~/.bashrc
 echo ".dotfiles" >>.gitignore
 git clone --bare $DOT_FILES ~/.dotfiles
-dotfiles reset --hard
+cd "$HOME"
 dotfiles config --local status.showUntrackedFiles no
+dotfiles reset --hard
