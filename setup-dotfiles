@@ -1,17 +1,20 @@
-#!/bin/env sh
-
-set -eu
-
-dotfiles(){ /usr/bin/git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" "$@"; }
+#!/bin/sh
+#
+# Sets up my dotfiles
 
 DOT_FILES="https://github.com/cristianrz/dotfiles.git"
 
-cd "$HOME"
+dot() {
+	/usr/bin/git --git-dir="$HOME"/.dotfiles/ --work-tree="$HOME" "$@"
+}
 
-printf 'alias dotfiles="/usr/bin/git ' >>~/.bashrc
-# shellcheck disable=SC2016
-echo '--git-dir="$HOME"/.dotfiles/ --work-tree="$HOME"' >>~/.bashrc
+main() {
+	cd "$HOME" || exit 1
 
-git clone --bare "$DOT_FILES" "$HOME"/.dotfiles
-dotfiles config --local status.showUntrackedFiles no
-dotfiles reset --hard
+	git clone --bare "$DOT_FILES" "$HOME"/.dotfiles
+	dot config --local status.showUntrackedFiles no
+	dot reset --hard
+
+}
+
+main
