@@ -1,2 +1,5 @@
-#!/bin/env sh
+#!/bin/sh
+#
+# Fixes when hotkeys to change TTYs get messed up
+
 sudo sh -c 'dumpkeys |grep -v cr_Console |loadkeys'

@@ -1,8 +1,21 @@
-#!/bin/env sh
+#!/bin/sh
+#
+# All the fixes I usually need for wifi to work
 
+# Fix for when interface name is too long
 if [ ! -e /etc/systemd/network/99-default.link ]; then
-  ln -s /dev/null /etc/systemd/network/99-default.link
+	ln -s /dev/null /etc/systemd/network/99-default.link
 fi
-
 echo 'Please remove and reconnect the wifi adapter now and press ENTER'
 read -r
+
+# Change DNS server to 8.8.8.8
+mv /etc/resolv.conf /etc/resolv.conf.bkp
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
+
+# Fixes openvpn issues, can't remember why
+chmod +x /etc/openvpn/update-*
+
+# Disables waiting for network to be configured on boot
+systemctl disable systemd-networkd-wait-online.service
+systemctl mask systemd-networkd-wait-online.service
